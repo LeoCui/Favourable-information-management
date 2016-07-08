@@ -12,7 +12,7 @@ public class DBUtil {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost/favourable","root","root");
+			connection = DriverManager.getConnection("jdbc:mysql://10.25.129.13/favourable?useUnicode=true&characterEncoding=utf8","root","root");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

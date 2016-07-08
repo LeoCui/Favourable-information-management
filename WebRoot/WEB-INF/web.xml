@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" 
-	xmlns="http://java.sun.com/xml/ns/javaee" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>servelet1</servlet-name>
-    <servlet-class>com.leo.webTest.Servelet.loginServelet</servlet-class>
-  </servlet>
+<web-app version="2.5"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>searchServelet</servlet-name>
-    <servlet-class>com.leo.webTest.Servelet.searchServelet</servlet-class>
+    <servlet-class>com.favourable.servlet.searchServelet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowItemOfMarketServelet</servlet-name>
+    <servlet-class>com.favourable.servlet.ShowItemOfMarketServelet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>showItemDetailServelet</servlet-name>
+    <servlet-class>com.favourable.servlet.showItemDetailServelet</servlet-class>
   </servlet>
 
 
-  <servlet-mapping>
-    <servlet-name>servelet1</servlet-name>
-    <url-pattern>/sss</url-pattern>
-  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>searchServelet</servlet-name>
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+  <servlet-mapping>
+    <servlet-name>ShowItemOfMarketServelet</servlet-name>
+    <url-pattern>/ShowItemOfMarket</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>showItemDetailServelet</servlet-name>
+    <url-pattern>/showDetailItem</url-pattern>
+  </servlet-mapping>
+
 </web-app>

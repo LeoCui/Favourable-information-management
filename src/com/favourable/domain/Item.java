@@ -9,9 +9,26 @@ public class Item {
 	private float discount;
 	private String product;
 	private int marketID;
+	private String marketName;
+	private String marketAddress;
+	public String getMarketAddress() {
+		return marketAddress;
+	}
+
+	public void setMarketAddress(String marketAddress) {
+		this.marketAddress = marketAddress;
+	}
+
+	public String getMarketName() {
+		return marketName;
+	}
+
+	public void setMarketName(String marketName) {
+		this.marketName = marketName;
+	}
+
 	private String catagory;
 	private String itemPicture;
-	
 	public Item() {
 		super();
 	}

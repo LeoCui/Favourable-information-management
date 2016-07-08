@@ -19,33 +19,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/bootstrap.min.css" rel="stylesheet">
    <script src="js/jquery.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" language="javasript">
+   	   function onFocus(){
+   	   		if(document.getElementById("input1").value=='输入超市/商品'){
+   	   		   document.getElementById("input1").value='';
+   	   		   document.getElementById("input1").className="input1_style";
+			}
+   	   }
+   	   function onBlur(){
+   	   		if(document.getElementById("input1").value==''){
+   	   			document.getElementById("input1").value='输入超市/商品';
+   	   			document.getElementById("input1").className="input0_style";
+   	   		}
+   	   }
+   </script>
+   
    <style type="text/css">
-	.nav > li .dropdown-menu {
-	margin: 0;
-}
-   .nav > li:hover .dropdown-menu {
-	display: block;
-}	
+		.input1_style{color:black}
+		.input0_style{color:#e5e1e1}
 	</style>
   </head>
   
   <body>
     <center>
-    <form  action="search"  method="get">
-    	<table>
+    <form  action="search"  method="get" target="frame1">
+    	<table width="20%" height="100%" border="0">
     		<tr>
-    			 <td>
+    			 <td width="0%">
     			      <select name="category">
     			      	  <option >超市</option>
     			      	  <option >商品</option>
     			      </select>
     			 </td>
-    			 <td>
-    			 	<input type="text" value="输入超市/商品" onfocus="if(value=='输入超市/商品') {value=''}"
-    			 	 onblur="if(value=='') {value='输入超市/商品'}" name="name" size="30" style="color:#e5e1e1;"/>
+    			 <td width=80%>
+    			 	<input class="input0_style "id="input1" name="name" type="text" width="100%" value="输入超市/商品" onfocus="javascript:onFocus()"
+    			 	 onblur="javascript:onBlur()"/>
     			 </td>
-    			 <td>
-    			 	<button type="submit" class="btn btn-default" aria-label="Left Align">
+    			 <td width="10%">
+    			 	<button type="submit" width="100%" class="btn btn-default">
                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>	 	
     			 </td>
     		</tr>

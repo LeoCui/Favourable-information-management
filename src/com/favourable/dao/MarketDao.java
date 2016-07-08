@@ -32,7 +32,13 @@ public class MarketDao {
 			market.setMarketName(resultSet.getString("marketName"));
 			market.setMarketLicense(resultSet.getString("marketLicense"));
 			market.setMarketCity(resultSet.getString("marketCity"));
-			market.setMarketAreaID(resultSet.getInt("marketAreaID"));
+			int id=resultSet.getInt("marketAreaID");
+			market.setMarketAreaID(id);
+			sql="select * from areainfo where areaID="+id+"";
+			preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet1 = preparedStatement.executeQuery();
+			resultSet1.next();
+			market.setMarketArea(resultSet1.getString("areaName"));
 			market.setMarketBlock(resultSet.getString("marketBlock"));
 			market.setMarketPicture(resultSet.getString("marketPicture"));
 		}		
@@ -62,9 +68,8 @@ public class MarketDao {
 	
 	//根据超市名称模糊查询
 	public List<Market> getMarketByMarketName(String marketName) throws SQLException{
-		String sql = "select * from marketinfo where marketName like '%?%'";
+		String sql = "select * from marketinfo"+" where marketName like '%"+marketName+"%'";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
-		preparedStatement.setString(1, marketName);
 		ResultSet resultSet = preparedStatement.executeQuery();
 		List<Market> marketList = new ArrayList<Market>();
 		while(resultSet.next()){
@@ -73,7 +78,13 @@ public class MarketDao {
 			market.setMarketName(resultSet.getString("marketName"));
 			market.setMarketLicense(resultSet.getString("marketLicense"));
 			market.setMarketCity(resultSet.getString("marketCity"));
-			market.setMarketAreaID(resultSet.getInt("marketAreaID"));
+			int id=resultSet.getInt("marketAreaID");
+			market.setMarketAreaID(id);
+			sql="select * from areainfo where areaID="+id+"";
+			preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet1 = preparedStatement.executeQuery();
+			resultSet1.next();
+			market.setMarketArea(resultSet1.getString("areaName"));
 			market.setMarketBlock(resultSet.getString("marketBlock"));
 			market.setMarketPicture(resultSet.getString("marketPicture"));
 			marketList.add(market);		

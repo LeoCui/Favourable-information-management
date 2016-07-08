@@ -9,8 +9,20 @@ public class Market {
 	private int marketAreaID;
 	private String marketBlock;
 	private String marketPicture;
+	private String marketArea;
 	
-	
+	public String getMarketArea() {
+		return marketArea;
+	}
+
+
+
+	public void setMarketArea(String marketArea) {
+		this.marketArea = marketArea;
+	}
+
+
+
 	public Market() {
 		super();
 	}
